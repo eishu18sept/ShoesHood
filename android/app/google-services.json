@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1067361239837",
+    "project_id": "shoeshood-95219",
+    "storage_bucket": "shoeshood-95219.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067361239837:android:df1828ce742b1e8c2797f4",
+        "android_client_info": {
+          "package_name": "com.example.shoeshood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067361239837-fth1amvupr654cakpkkf9dhgqhqdmmn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shoeshood",
+            "certificate_hash": "f446274b71538eae6874149ca1ac680a4014bf41"
+          }
+        },
+        {
+          "client_id": "1067361239837-r9te0ii6tomk62hgkvlia79tq2a164h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU51-00RAVUyHgZ0RkTiyXPJvCJTTHv8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067361239837-r9te0ii6tomk62hgkvlia79tq2a164h5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1067361239837-q7bf8okv8kd4e3shhb3u0qs5bvkp1o9p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shoeshood"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
