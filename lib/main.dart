@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Webiment',
+      title: 'ShoesHood',
       theme: ThemeData.light().copyWith(
           textTheme: TextTheme(
         bodyText1: TextStyle(
