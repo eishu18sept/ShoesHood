@@ -1,9 +1,14 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:shoeshood/widgets/appbar_widget.dart';
-import 'package:shoeshood/widgets/display_widget.dart';
-import 'package:shoeshood/widgets/side_nav.dart';
+import 'package:shoeshood/common_widgets/appbar_widget.dart';
+import 'package:shoeshood/common_widgets/display_widget.dart';
+import 'package:shoeshood/common_widgets/side_nav.dart';
+import 'package:shoeshood/screens/item_details.dart';
+import 'dart:io';
+
+import '../main.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = 'home_screen';
@@ -23,6 +28,32 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<int> brandImage = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    List<String> brandName = [
+      "Puma",
+      "Aldo",
+      "Zara",
+      "Gucci",
+      "Adidas",
+      "Nike",
+      "Vans",
+      "Lee Cooper",
+      "Reebok",
+      "Converse",
+    ];
+    List<double> price = [
+      1000.00,
+      2000.00,
+      3000.00,
+      4000.00,
+      5000.00,
+      6000.00,
+      7000.00,
+      8000.00,
+      9000.00,
+      10000.00,
+    ];
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: MyAppBarWidget(),
@@ -49,77 +80,36 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-              height: MediaQuery.of(context).size.width * 1.20,
+              padding: EdgeInsets.all(5),
+              height: MediaQuery.of(context).size.width * 1.5,
               child: GridView.count(
                 shrinkWrap: true,
-                crossAxisCount: 1,
-                childAspectRatio: 2,
+                crossAxisCount: 2,
+                childAspectRatio: 0.8,
+                crossAxisSpacing: 1,
                 scrollDirection: Axis.vertical,
                 children: [
-                  DisplayWidget(
-                    image: "image1.jpg",
-                    name: "Puma",
-                    price: 2499,
-                  ),
-                  DisplayWidget(
-                    image: "image2.jpg",
-                    name: "Aldo",
-                    price: 3999,
-                  ),
-                  DisplayWidget(
-                    image: "image3.jpg",
-                    name: "Zara",
-                    price: 2999,
-                  ),
-                  DisplayWidget(
-                    image: "image4.jpg",
-                    name: "Gucci",
-                    price: 5999,
-                  ),
-                  DisplayWidget(
-                    image: "image5.jpg",
-                    name: "Adidas",
-                    price: 1499,
-                  ),
-                  DisplayWidget(
-                    image: "image6.jpg",
-                    name: "Nike",
-                    price: 1499,
-                  ),
-                  DisplayWidget(
-                    image: "image7.jpg",
-                    name: "Vans",
-                    price: 1999,
-                  ),
-                  DisplayWidget(
-                    image: "image8.jpg",
-                    name: "Lee cooper",
-                    price: 2499,
-                  ),
-                  DisplayWidget(
-                    image: "image9.jpg",
-                    name: "Reebok",
-                    price: 1999,
-                  ),
-                  DisplayWidget(
-                    image: "image10.jpg",
-                    name: "Converse",
-                    price: 999,
-                  ),
+                  for (int i = 0; i < 10; i++)
+                    InkWell(
+                      child: DisplayWidget(
+                        image: "image" + brandImage[i].toString() + ".jpg",
+                        name: brandName[i],
+                        price: price[i],
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ItemDetails(
+                                      itemImage:
+                                          "image" + i.toString() + ".jpg",
+                                      itemName: brandName[i],
+                                      itemPrice: price[i],
+                                    )));
+                      },
+                    ),
                 ],
               )),
-          // Container(
-          //   height: MediaQuery.of(context).size.width * 0.05,
-          // ),
-          // Container(
-          //   height: MediaQuery.of(context).size.width * 0.45,
-          //   decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //       image: AssetImage("images/hurry.jpg"),
-          //       fit: BoxFit.fill,
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );

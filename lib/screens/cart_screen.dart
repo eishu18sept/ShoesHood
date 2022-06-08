@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:shoeshood/screens/payment_screen.dart';
-import 'package:shoeshood/widgets/appbar_widget.dart';
-import 'package:shoeshood/widgets/side_nav.dart';
+import 'package:shoeshood/common_widgets/appbar_widget.dart';
+import 'package:shoeshood/common_widgets/side_nav.dart';
 
-class MyCartScreen extends StatefulWidget {
+class MyOrdersScreen extends StatefulWidget {
   static String id = 'user_cart';
 
   @override
-  _MyCartScreenState createState() => _MyCartScreenState();
+  _MyOrdersScreenState createState() => _MyOrdersScreenState();
 }
 
-class _MyCartScreenState extends State<MyCartScreen> {
+class _MyOrdersScreenState extends State<MyOrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

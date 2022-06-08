@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shoeshood/widgets/appbar_widget.dart';
-import 'package:shoeshood/widgets/side_nav.dart';
+import 'package:shoeshood/common_widgets/appbar_widget.dart';
+import 'package:shoeshood/common_widgets/side_nav.dart';
 
 class MyProfileScreen extends StatefulWidget {
   static String id = 'my_profile';
