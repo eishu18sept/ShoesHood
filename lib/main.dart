@@ -5,6 +5,8 @@ import 'package:shoeshood/mainScreenFile.dart';
 import 'package:shoeshood/screens/home_screen.dart';
 import 'dart:io';
 
+import 'package:shoeshood/screens/login_screen.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -67,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           theme: theme,
           darkTheme: darkTheme,
           home: ActiveConnection == true
-              ? MainScreenFile()
+              ? LoginScreen()
               : Column(
                   children: [
                     Text("Please turn on internet"),

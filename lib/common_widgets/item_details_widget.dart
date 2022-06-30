@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shoeshood/common_widgets/customer_reviews_widget.dart';
 import 'package:shoeshood/screens/home_screen.dart';
 
-class ItemDetailsWidget extends StatelessWidget {
+class ItemDetailsWidget extends StatefulWidget {
   const ItemDetailsWidget({
     required this.onClickAction,
     required this.image,
@@ -17,6 +18,15 @@ class ItemDetailsWidget extends StatelessWidget {
   final Function onClickAction;
 
   @override
+  State<ItemDetailsWidget> createState() => _ItemDetailsWidgetState();
+}
+
+class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
+  final _formKey = GlobalKey<FormState>();
+  bool _autovalidate = false;
+  String? selectedSalutation;
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
@@ -27,11 +37,11 @@ class ItemDetailsWidget extends StatelessWidget {
             child: Image(
               height: 250.0,
               width: 250.0,
-              image: AssetImage("images/$image"),
+              image: AssetImage("images/${widget.image}"),
             ),
           ),
           Text(
-            "$name",
+            "${widget.name}",
             style: TextStyle(
               color: Colors.black,
               fontSize: 30.0,
@@ -41,7 +51,7 @@ class ItemDetailsWidget extends StatelessWidget {
             height: 15.0,
           ),
           Text(
-            "$description",
+            "${widget.description}",
             style: TextStyle(
               color: Colors.black,
               fontSize: 15.0,
@@ -51,7 +61,7 @@ class ItemDetailsWidget extends StatelessWidget {
             height: 15.0,
           ),
           Text(
-            "$price/-",
+            "${widget.price}/-",
             style: TextStyle(
               color: Colors.black,
               fontSize: 30.0,
@@ -60,30 +70,62 @@ class ItemDetailsWidget extends StatelessWidget {
           SizedBox(
             height: 15.0,
           ),
-          Container(
-            color: Colors.blue,
-            child: DropdownButton<String>(
-              focusColor: Colors.redAccent,
-              elevation: 5,
-              hint: Text(
-                "Please select your size",
-                maxLines: 2,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
+          Form(
+            key: _formKey,
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.7,
+              color: Colors.blue,
+              child: DropdownButtonFormField<String>(
+                focusColor: Colors.redAccent,
+                elevation: 5,
+                hint: Text(
+                  "Please select your size",
+                  maxLines: 2,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
                 ),
+                style: TextStyle(color: Colors.black),
+                iconEnabledColor: Colors.black,
+                dropdownColor: Colors.red[200],
+                value: selectedSalutation,
+                onChanged: (salutation) =>
+                    setState(() => selectedSalutation = salutation),
+                validator: (value) => value == null ? 'field required' : null,
+                items: ['7', '8', '9', '10', '11', '12']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
-              style: TextStyle(color: Colors.black),
-              iconEnabledColor: Colors.black,
-              dropdownColor: Colors.red[200],
-              items:
-                  <String>['7', '8', '9', '10', '11', '12'].map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: new Text(value),
-                );
-              }).toList(),
-              onChanged: (_) {},
+              // DropdownButton<String>(
+              //   focusColor: Colors.redAccent,
+              //   elevation: 5,
+              //   hint: Text(
+              //     "Please select your size",
+              //     maxLines: 2,
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontSize: 14,
+              //     ),
+              //   ),
+              //   style: TextStyle(color: Colors.black),
+              //   iconEnabledColor: Colors.black,
+              //   dropdownColor: Colors.red[200],
+              //   items: <String>['7', '8', '9', '10', '11', '12']
+              //       .map((String value) {
+              //     validator:
+              //     (value) => value == null ? 'field required' : null;
+              //     return DropdownMenuItem<String>(
+              //       value: value,
+              //       child: new Text(value),
+              //     );
+              //   }).toList(),
+              //   onChanged: (_) {},
+              // ),
             ),
           ),
           SizedBox(
@@ -96,6 +138,12 @@ class ItemDetailsWidget extends StatelessWidget {
               elevation: 5.0,
               child: MaterialButton(
                 onPressed: () {
+                  onPressed:
+                  () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+                    }
+                  };
                   // Navigator.push(
                   //     context,
                   //     MaterialPageRoute(
@@ -111,6 +159,10 @@ class ItemDetailsWidget extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 15,
+          ),
+          CustomerReviews(),
         ],
       ),
     );

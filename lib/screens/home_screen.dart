@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<int> brandImage = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    List<int> brandImage = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     List<String> brandName = [
       "Puma",
       "Aldo",

@@ -46,7 +46,7 @@ class _MainScreenFileState extends State<MainScreenFile> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag),
-            label: 'My Orders',
+            label: 'My Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(
