@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shoeshood/utils/size_config.dart';
 
 class CustomerReviews extends StatelessWidget {
   const CustomerReviews({Key? key}) : super(key: key);
@@ -8,11 +9,21 @@ class CustomerReviews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(SizeConfig.standardBlockSize * 8.0),
+      width: SizeConfig.screenWidth * 0.9,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black, width: 1),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        color: Colors.white,
+      ),
       child: Column(
         children: [
           Text(
             "Give Review",
             style: TextStyle(fontSize: 24),
+          ),
+          SizedBox(
+            height: SizeConfig.standardBlockSize * 10,
           ),
           RatingBar.builder(
             initialRating: 0,

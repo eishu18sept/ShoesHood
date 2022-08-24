@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoeshood/modules/payment/screens/payment_screen.dart';
+import 'package:shoeshood/utils/size_config.dart';
 import 'package:shoeshood/widgets/appbar_widget.dart';
 import 'package:shoeshood/widgets/side_nav.dart';
 
@@ -22,7 +23,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                  height: MediaQuery.of(context).size.width * 1.2,
+                  height: SizeConfig.screenWidth * 1.2,
                   child: SizedBox(
                       child: GridView.count(
                     shrinkWrap: true,

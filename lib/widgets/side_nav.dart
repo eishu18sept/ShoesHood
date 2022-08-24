@@ -5,6 +5,7 @@ import 'package:shoeshood/modules/home/screens/home_screen.dart';
 import 'package:shoeshood/modules/login/screens/login_screen.dart';
 import 'package:shoeshood/modules/profile/screens/profile_screen.dart';
 import 'package:shoeshood/services/firebase_google_signin_service.dart';
+import 'package:shoeshood/utils/size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavDrawer extends StatefulWidget {
@@ -22,7 +23,7 @@ class _NavDrawerState extends State<NavDrawer> {
         padding: EdgeInsets.zero,
         children: <Widget>[
           Container(
-            height: MediaQuery.of(context).size.width * 0.3,
+            height: SizeConfig.screenWidth * 0.3,
             child: DrawerHeader(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

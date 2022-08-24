@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoeshood/utils/size_config.dart';
 import 'package:shoeshood/widgets/appbar_widget.dart';
 import 'package:shoeshood/widgets/side_nav.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -18,13 +19,13 @@ class _InformationState extends State<Information> {
       drawer: NavDrawer(),
       body: Center(
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.9,
-          height: MediaQuery.of(context).size.height * 1,
+          width: SizeConfig.screenWidth * 0.9,
+          height: SizeConfig.screenHeight * 1,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 1,
+                width: SizeConfig.screenWidth * 1,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +41,8 @@ class _InformationState extends State<Information> {
                       height: 20,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 1,
-                      height: MediaQuery.of(context).size.height * 0.2,
+                      width: SizeConfig.screenWidth * 1,
+                      height: SizeConfig.screenHeight * 0.2,
                       child: Image.asset(
                         'images/logo.jpg',
                         fit: BoxFit.fill,

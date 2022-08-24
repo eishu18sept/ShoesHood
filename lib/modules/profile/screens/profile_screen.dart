@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shoeshood/utils/size_config.dart';
 import 'package:shoeshood/widgets/appbar_widget.dart';
 import 'package:shoeshood/widgets/side_nav.dart';
 
@@ -26,7 +27,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.redAccent),
                 ),
-                height: MediaQuery.of(context).size.width * 0.4,
+                height: SizeConfig.screenWidth * 0.4,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,7 +81,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
               ),
             ),
             Container(
-                height: MediaQuery.of(context).size.width * 0.8,
+                height: SizeConfig.screenWidth * 0.8,
                 child: SizedBox(
                     child: GridView.count(
                   shrinkWrap: true,

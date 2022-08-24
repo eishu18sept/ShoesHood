@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shoeshood/modules/home/screens/cart/screens/cart_screen.dart';
 import 'package:shoeshood/modules/profile/screens/profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shoeshood/utils/size_config.dart';
 
 class MyAppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   const MyAppBarWidget({Key? key}) : super(key: key);
@@ -52,8 +53,8 @@ class _MyAppBarWidgetState extends State<MyAppBarWidget> {
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white,
                     border: Border.all(width: 1)),
-                height: MediaQuery.of(context).size.height * 0.5,
-                width: MediaQuery.of(context).size.width * 0.8,
+                height: SizeConfig.screenHeight * 0.5,
+                width: SizeConfig.screenWidth * 0.8,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
