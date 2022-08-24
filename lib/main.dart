@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:shoeshood/mainScreenFile.dart';
-import 'package:shoeshood/screens/home_screen.dart';
-import 'dart:io';
+import 'package:shoeshood/modules/login/screens/login_screen.dart';
 
-import 'package:shoeshood/screens/login_screen.dart';
+import 'package:shoeshood/screens/app_home_screen.dart';
+
+import 'dart:io';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           theme: theme,
           darkTheme: darkTheme,
           home: ActiveConnection == true
-              ? LoginScreen()
+              ? AppHome()
               : Column(
                   children: [
                     Text("Please turn on internet"),

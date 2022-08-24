@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/screens/item_details.dart';
+import 'package:shoeshood/modules/item/screens/item_details.dart';
 
 class DisplayWidget extends StatelessWidget {
   const DisplayWidget({

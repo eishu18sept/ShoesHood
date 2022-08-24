@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/screens/payment_screen.dart';
-import 'package:shoeshood/common_widgets/appbar_widget.dart';
-import 'package:shoeshood/common_widgets/side_nav.dart';
+import 'package:shoeshood/modules/payment/screens/payment_screen.dart';
+import 'package:shoeshood/widgets/appbar_widget.dart';
+import 'package:shoeshood/widgets/side_nav.dart';
 
 class MyOrdersScreen extends StatefulWidget {
   static String id = 'user_cart';

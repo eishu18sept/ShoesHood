@@ -3,8 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:shoeshood/mainScreenFile.dart';
-import 'package:shoeshood/screens/home_screen.dart';
+import 'package:shoeshood/screens/app_home_screen.dart';
+
+import 'package:shoeshood/modules/home/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';
@@ -71,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void onGoogleSignIn(BuildContext context) async {
     User? user = await _handleSignIn();
     var userSignedIn = Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MainScreenFile()));
+        context, MaterialPageRoute(builder: (context) => AppHome()));
 
     setState(() {
       isUserSignedIn = userSignedIn == null ? true : false;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shoeshood/screens/cart_screen.dart';
-import 'package:shoeshood/screens/profile_screen.dart';
+import 'package:shoeshood/modules/home/screens/cart/screens/cart_screen.dart';
+import 'package:shoeshood/modules/profile/screens/profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class MyAppBarWidget extends StatefulWidget implements PreferredSizeWidget {
@@ -32,10 +32,10 @@ class _MyAppBarWidgetState extends State<MyAppBarWidget> {
           onPressed: () {
             showMyProfileDialog(context);
           },
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(user!.photoURL!),
-          ),
-          shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+          // child: CircleAvatar(
+          //   backgroundImage: NetworkImage(user!.photoURL!),
+          // ),
+          // shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
         ),
       ],
     );
@@ -57,10 +57,10 @@ class _MyAppBarWidgetState extends State<MyAppBarWidget> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(user!.photoURL!),
-                      radius: 30,
-                    ),
+                    // CircleAvatar(
+                    //   backgroundImage: NetworkImage(user!.photoURL!),
+                    //   radius: 30,
+                    // ),
                     Expanded(
                       flex: 3,
                       child: Column(
@@ -71,7 +71,8 @@ class _MyAppBarWidgetState extends State<MyAppBarWidget> {
                             style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           Text(
-                            user!.displayName!,
+                            // user!.displayName!,
+                            "Yoo wassup",
                             maxLines: 3,
                             style: TextStyle(color: Colors.black, fontSize: 25),
                           ),

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/screens/cart_screen.dart';
-import 'package:shoeshood/screens/home_screen.dart';
-import 'package:shoeshood/screens/settings_screen.dart';
+import 'package:shoeshood/modules/home/screens/cart/screens/cart_screen.dart';
+import 'package:shoeshood/modules/home/screens/home_screen.dart';
+import 'package:shoeshood/modules/settings/screens/settings_screen.dart';
+import 'package:shoeshood/utils/size_config.dart';
 
-class MainScreenFile extends StatefulWidget {
-  MainScreenFile({Key? key}) : super(key: key);
+class AppHome extends StatefulWidget {
+  AppHome({Key? key}) : super(key: key);
 
   @override
-  _MainScreenFileState createState() => _MainScreenFileState();
+  _AppHomeState createState() => _AppHomeState();
 }
 
-class _MainScreenFileState extends State<MainScreenFile> {
+class _AppHomeState extends State<AppHome> {
   void _onItemTapped(int index) {
     setState(() {
       currentIndex = index;
@@ -28,6 +29,7 @@ class _MainScreenFileState extends State<MainScreenFile> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: Center(
         child: myScreens.elementAt(currentIndex),

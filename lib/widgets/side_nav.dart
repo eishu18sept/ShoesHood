@@ -1,10 +1,10 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shoeshood/screens/home_screen.dart';
-import 'package:shoeshood/screens/login_screen.dart';
-import 'package:shoeshood/screens/profile_screen.dart';
-import 'package:shoeshood/signin_services/firebase_google_signin_service.dart';
+import 'package:shoeshood/modules/home/screens/home_screen.dart';
+import 'package:shoeshood/modules/login/screens/login_screen.dart';
+import 'package:shoeshood/modules/profile/screens/profile_screen.dart';
+import 'package:shoeshood/services/firebase_google_signin_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NavDrawer extends StatefulWidget {

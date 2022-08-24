@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/common_widgets/appbar_widget.dart';
-import 'package:shoeshood/common_widgets/item_details_widget.dart';
-import 'package:shoeshood/common_widgets/side_nav.dart';
+import 'package:shoeshood/widgets/appbar_widget.dart';
+import 'package:shoeshood/modules/item/widgets/item_details_widget.dart';
+import 'package:shoeshood/widgets/side_nav.dart';
 
 class ItemDetails extends StatefulWidget {
   static String id = 'item_details';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/common_widgets/appbar_widget.dart';
-import 'package:shoeshood/common_widgets/side_nav.dart';
+import 'package:shoeshood/widgets/appbar_widget.dart';
+import 'package:shoeshood/widgets/side_nav.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Information extends StatefulWidget {

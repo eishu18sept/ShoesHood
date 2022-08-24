@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/common_widgets/customer_reviews_widget.dart';
-import 'package:shoeshood/screens/home_screen.dart';
+import 'package:shoeshood/modules/item/widgets/customer_reviews_widget.dart';
+import 'package:shoeshood/modules/home/screens/home_screen.dart';
 
 class ItemDetailsWidget extends StatefulWidget {
   const ItemDetailsWidget({
