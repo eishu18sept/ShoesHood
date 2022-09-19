@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shoeshood/modules/home/screens/cart/screens/cart_screen.dart';
+import 'package:shoeshood/modules/cart/screens/cart_screen.dart';
 import 'package:shoeshood/modules/home/screens/home_screen.dart';
+import 'package:shoeshood/modules/profile/screens/profile_screen.dart';
 import 'package:shoeshood/modules/settings/screens/settings_screen.dart';
 import 'package:shoeshood/utils/size_config.dart';
 
@@ -22,7 +23,7 @@ class _AppHomeState extends State<AppHome> {
   int currentIndex = 1;
 
   static List<Widget> myScreens = <Widget>[
-    MyOrdersScreen(),
+    MyProfileScreen(),
     HomeScreen(),
     Information(),
   ];
@@ -47,8 +48,8 @@ class _AppHomeState extends State<AppHome> {
         selectedItemColor: Colors.white,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag),
-            label: 'My Cart',
+            icon: Icon(Icons.verified_user),
+            label: 'Profile',
           ),
           BottomNavigationBarItem(
             icon: Icon(

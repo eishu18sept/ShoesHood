@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           theme: theme,
           darkTheme: darkTheme,
           home: ActiveConnection == true
-              ? AppHome()
+              ? LoginScreen()
               : Column(
                   children: [
                     Text("Please turn on internet"),

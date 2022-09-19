@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -41,6 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<User?> _handleSignIn() async {
+    log("yoo");
     User user;
     bool userSignedIn = await _googleSignIn.isSignedIn();
 
@@ -59,7 +62,8 @@ class _LoginScreenState extends State<LoginScreen> {
       );
       await _auth.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
-      print(e.message);
+      print(e);
+      log(e.toString());
       throw e;
     }
   }

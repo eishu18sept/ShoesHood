@@ -1,6 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shoeshood/modules/home/screens/cart/screens/cart_screen.dart';
+import 'package:shoeshood/modules/cart/screens/cart_screen.dart';
 import 'package:shoeshood/modules/profile/screens/profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shoeshood/utils/size_config.dart';
@@ -28,15 +30,17 @@ class _MyAppBarWidgetState extends State<MyAppBarWidget> {
       backgroundColor: Colors.redAccent,
       title: Text("ShoesHood"),
       actions: <Widget>[
-        MaterialButton(
-          textColor: Colors.white,
-          onPressed: () {
-            showMyProfileDialog(context);
+        IconButton(
+          onPressed: () async {
+            for (int i = 0; i < 1000000; i++) {
+              log("Hello: $i");
+            }
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => MyOrdersScreen()),
+            // );
           },
-          // child: CircleAvatar(
-          //   backgroundImage: NetworkImage(user!.photoURL!),
-          // ),
-          // shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+          icon: Icon(Icons.shop),
         ),
       ],
     );

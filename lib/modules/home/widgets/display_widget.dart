@@ -26,7 +26,7 @@ class DisplayWidget extends StatelessWidget {
             color: Colors.white,
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 padding: EdgeInsets.all(4),
@@ -41,31 +41,30 @@ class DisplayWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 20,
+                width: 10,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "$name",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+              Container(
+                child: Text(
+                  "$name",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Text(
-                    "$price/-",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "$price/-",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),

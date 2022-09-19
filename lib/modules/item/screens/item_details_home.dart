@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shoeshood/modules/item/widgets/customer_reviews_widget.dart';
 import 'package:shoeshood/modules/home/screens/home_screen.dart';
 import 'package:shoeshood/utils/size_config.dart';
+import 'package:shoeshood/widgets/buttons.dart';
 
 class ItemDetailsWidget extends StatefulWidget {
   const ItemDetailsWidget({
@@ -23,15 +24,14 @@ class ItemDetailsWidget extends StatefulWidget {
 }
 
 class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
-  final _formKey = GlobalKey<FormState>();
-  bool _autovalidate = false;
-  String? selectedSalutation;
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
+          SizedBox(
+            height: SizeConfig.standardBlockSize * 15.0,
+          ),
           Container(
             padding: EdgeInsets.all(SizeConfig.standardBlockSize * 5.0),
             height: SizeConfig.standardBlockSize * 200.0,
@@ -40,6 +40,9 @@ class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
               fit: BoxFit.fitWidth,
               image: AssetImage("images/${widget.image}"),
             ),
+          ),
+          SizedBox(
+            height: SizeConfig.standardBlockSize * 15.0,
           ),
           Text(
             "${widget.name}",
@@ -71,76 +74,49 @@ class _ItemDetailsWidgetState extends State<ItemDetailsWidget> {
                   fontSize: 30.0,
                 ),
               ),
-              Form(
-                key: _formKey,
-                child: Container(
-                  padding: EdgeInsets.all(SizeConfig.standardBlockSize * 8.0),
-                  width: SizeConfig.screenWidth * 0.5,
-                  height: SizeConfig.standardBlockSize * 60,
-                  color: Colors.blue,
-                  child: DropdownButtonFormField<String>(
-                    focusColor: Colors.redAccent,
-                    elevation: 5,
-                    hint: Text(
-                      "Please select a size",
-                      maxLines: 2,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
-                    ),
-                    style: TextStyle(color: Colors.black),
-                    iconEnabledColor: Colors.black,
-                    dropdownColor: Colors.red[200],
-                    value: selectedSalutation,
-                    onChanged: (salutation) =>
-                        setState(() => selectedSalutation = salutation),
-                    validator: (value) =>
-                        value == null ? 'field required' : null,
-                    items: ['7', '8', '9', '10', '11', '12']
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                  ),
-                ),
-              ),
             ],
           ),
-          SizedBox(
-            height: 15.0,
-          ),
-          SizedBox(
-            height: 25.0,
-          ),
-          Center(
-            child: Material(
-              color: Colors.black,
-              borderRadius: BorderRadius.all(Radius.circular(30.0)),
-              elevation: 5.0,
-              child: MaterialButton(
-                onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => ItemDetails()));
-                },
-                child: Text(
-                  'Add to Cart',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
+          ListView.builder(
+              // shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: 6,
+              itemBuilder: (context, i) {
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: CircleAvatar(
+                      backgroundColor: Colors.redAccent,
+                      radius: 22,
+                      child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 20,
+                          child: Text(
+                            "${i + 7}",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          )),
+                    ),
                   ),
-                ),
-              ),
-            ),
-          ),
+                );
+              }),
+          CustomOutlineButton(
+              borderColor: Colors.redAccent,
+              title: "Add to Cart",
+              textColor: Colors.white,
+              backgroundColor: Colors.redAccent,
+              onTap: () {},
+              width: SizeConfig.standardBlockSize * 128.0,
+              height: SizeConfig.standardBlockSize * 48.0),
           SizedBox(
-            height: SizeConfig.standardBlockSize * 15.0,
+            height: SizeConfig.standardBlockSize * 25.0,
           ),
           CustomerReviews(),
+          SizedBox(
+            height: SizeConfig.standardBlockSize * 25.0,
+          ),
         ],
       ),
     );
