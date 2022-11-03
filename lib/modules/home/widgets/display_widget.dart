@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shoeshood/modules/item/widgets/item_details.dart';
 import 'package:shoeshood/utils/size_config.dart';
@@ -23,7 +25,6 @@ class DisplayWidget extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(5)),
-            color: Colors.white,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -31,15 +31,7 @@ class _MyAppBarWidgetState extends State<MyAppBarWidget> {
       title: Text("ShoesHood"),
       actions: <Widget>[
         IconButton(
-          onPressed: () async {
-            for (int i = 0; i < 1000000; i++) {
-              log("Hello: $i");
-            }
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => MyOrdersScreen()),
-            // );
-          },
+          onPressed: () async {},
           icon: Icon(Icons.shop),
         ),
       ],

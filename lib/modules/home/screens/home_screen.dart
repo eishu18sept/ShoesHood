@@ -13,8 +13,6 @@ import 'dart:io';
 import '../../../main.dart';
 
 class HomeScreen extends StatefulWidget {
-  static String id = 'home_screen';
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -30,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: MyAppBarWidget(),
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(SizeConfig.standardBlockSize * 10.0),
               child: Container(
                 height: SizeConfig.standardBlockSize * 50.0,
                 child: Center(
@@ -50,8 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         border: new OutlineInputBorder(
                             borderSide:
                                 new BorderSide(color: Colors.redAccent)),
-                        contentPadding: EdgeInsets.only(
-                            left: 15, bottom: 11, top: 11, right: 15),
                         hintText: "Search for your favourite shoes"),
                   ),
                 ),
